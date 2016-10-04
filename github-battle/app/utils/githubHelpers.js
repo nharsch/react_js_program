@@ -2,7 +2,7 @@ var axios = require('axios');
 var secData = require('./secrets.json');
 
 var param = "?client_id=" + secData.id + "&client_secret=" + secData.secret;
-var github_api_url = 'https://agi.github.com/users/'
+var github_api_url = 'http://api.github.com/users/'
 
 function getUserInfo (username) {
   return axios.get(github_api_url + username + param)
