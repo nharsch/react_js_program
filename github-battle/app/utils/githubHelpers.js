@@ -8,6 +8,21 @@ function getUserInfo (username) {
   return axios.get(github_api_url + username + param)
 }
 
+function getRepos (username) {
+  // fetch username repos
+  return axios.get(github_api_url + username + '/repos' + param + '')
+}
+
+function getTotsalStarts (starts) {
+  // calculate all the starts that the user has
+}
+
+function getPlayersData (player) {
+}
+
+function calculateScores (players) {
+}
+
 var helpers = {
   getPlayersInfo: function (players) {
     // axios takes array of promises
@@ -20,6 +35,9 @@ var helpers = {
     }).catch(function (err) {
       console.warn('Error in getPlayersInfo', err);
     })
+  },
+  battle: function (players) {
+    
   }
 };
 

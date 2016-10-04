@@ -109,4 +109,8 @@ that can be called later
 
 ## Rendering UI in react
 
+## Reduce
 
+`.reduce(callback, initialValue)`
+
+## Container vs Presentaional Components
