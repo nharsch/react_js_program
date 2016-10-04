@@ -1,11 +1,8 @@
 var axios = require('axios');
+var secData = require('./secrets.json');
 
-// var id = "nharsch";
-var id = "";
-// var sec = "0f35b5dd72160cf29a402680ba61eacb306f3b60";
-var sec = "";
-var param = "?client_id=" + id + "&client_secret=" + sec;
-var github_api_url = 'http://agi.github.com/users/'
+var param = "?client_id=" + secData.id + "&client_secret=" + secData.secret;
+var github_api_url = 'https://agi.github.com/users/'
 
 function getUserInfo (username) {
   return axios.get(github_api_url + username + param)
@@ -22,7 +19,6 @@ var helpers = {
       })
     }).catch(function (err) {
       console.warn('Error in getPlayersInfo', err);
-      return [{},{}];
     })
   }
 };

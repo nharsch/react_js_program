@@ -106,3 +106,5 @@ that can be called later
 ### .bind
 
 `obj1.bind(obj2)` will make obj1.this == obj2
+
+
