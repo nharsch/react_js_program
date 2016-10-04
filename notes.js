@@ -79,24 +79,30 @@
 
 // object type, Animal is a function that takes properties and sets them
 // to instance
-var Animal = function(color, name, type){
-  this.color = color;
-  this.name = name;
-  this.type = type
+// var Animal = function(color, name, type){
+//   this.color = color;
+//   this.name = name;
+//   this.type = type
+// }
+//
+// // new binds
+// var zebra = new Animal('black and white', 'Zorro', 'Zebra');
+// console.log(zebra.name);
+//
+// var sayAge = () => {
+//   console.log(this.age);
+// };
+//
+// var me = {
+//   age: 25
+// };
+//
+// sayAge();
+// window.age = 30;
+// sayAge();
+
+function condRet (bool) {
+  return bool === true ? console.log("true") : console.log("false")
 }
 
-// new binds
-var zebra = new Animal('black and white', 'Zorro', 'Zebra');
-console.log(zebra.name);
-
-var sayAge = () => {
-  console.log(this.age);
-};
-
-var me = {
-  age: 25
-};
-
-sayAge();
-window.age = 30;
-sayAge();
+condRet(true)
