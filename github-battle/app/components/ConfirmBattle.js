@@ -33,7 +33,8 @@ function ConfirmBattle (props) {
         <div className='col-sm-12'>
           <Link to="/playerOne">
             <button type="button"
-                    className='btn btn-lg btn-danger'>
+                    className='btn btn-lg btn-danger'
+                    style={styles.space}>
               Reselect Players
             </button>
           </Link>
