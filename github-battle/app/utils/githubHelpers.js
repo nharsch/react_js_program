@@ -43,18 +43,18 @@ var helpers = {
     // axios takes array of promises
     return axios.all(players.map(function (username) {
       return getUserInfo(username)
-    })).then(function (info) { //info = two responses
+    }))
+    .then(function (info) { //info = two responses
       return info.map(function (user) {
-        return user.data;
+        return user.data
       })
-    }).catch(function (err) {
-      console.warn('Error in getPlayersInfo', err);
     })
+    .catch(function (err) {
+      console.warn('Error in getPlayersInfo', err)})
   },
   battle: (players) =>  {
     var playerOneData = getPlayersData(players[0]);
     var playerTwoData = getPlayersData(players[1]);
-
     return axios.all([playerOneData, playerTwoData])
       .then(calculateScores)
       .catch((err) => {console.warn('Error in getPlayersInfo: ', err)})

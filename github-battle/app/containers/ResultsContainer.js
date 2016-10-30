@@ -4,31 +4,28 @@ var githubHelpers = require('../utils/githubHelpers.js');
 
 var ResultsContainer = React.createClass({
     getInitialState: function () {
-        return {
-            isLoading: true,
-            scores: []
-        }
+      return {
+        isLoading: true,
+        scores: []
+      }
     },
     componentDidMount: function () {
-        console.log(this.props.location.state.playersInfo);
-        githubHelpers.battle(this.props.location.state.playersInfo)
-            .then((scores) =>  {
-                this.setState({
-                    scores: scores,
-                    isLoading: false
-                })
-            }).bind(this)
+      githubHelpers.battle(this.props.location.state.playersInfo)
+        .then((scores) =>  {
+          this.setState({
+            scores: scores,
+            isLoading: false
+          })
+        })
     },
     render: function() {
-        return (
-           <Results
-            isLoading={this.state.isLoading}
-            results={this.state.scores}
-            playersInfo={this.props.location.state.playersInfo }/>
-        );
+      return (
+        <Results
+          isLoading={this.state.isLoading}
+          scores={this.state.scores}
+          playersInfo={this.props.location.state.playersInfo}/>
+      );
     }
-
-
-  });
+});
 
 module.exports = ResultsContainer;
