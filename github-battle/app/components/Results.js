@@ -1,10 +1,12 @@
 var React = require('react');
+var Link = require('react-router').Link;
+var Loading = require('./Loading');
 var MainContainer = require('./MainContainer');
 var PropTypes = React.PropTypes;
 var styles = require('../styles');
 var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
-var Link = require('react-router').Link;
+
 
 function puke (obj) {
   return <pre>{JSON.stringify(obj, 2, ' ')}</pre>
@@ -25,7 +27,7 @@ function Results (props) {
   // Tie?
   if (props.isLoading === true) {
     return (
-      <p>Loading</p>
+      <Loading text="almost there" speed="200"/>
     )
   }
   if (props.scores[0] == props.scores[1]) {

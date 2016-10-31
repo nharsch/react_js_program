@@ -1,15 +1,16 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var Link = require('react-router').Link;
+var Loading = require('./Loading');
 var MainContainer = require('./MainContainer');
 var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
-var styles = require('../Styles');
+var styles = require('../styles');
 
 function ConfirmBattle (props) {
   v = JSON.stringify(props, null, ' ');
   return props.isLoading === true
-    ? <p> LOADING! </p>
+    ? <Loading speed="500" text="Wait one sec"/>
     : <MainContainer>
         <h1>Confirm Players</h1>
           <UserDetailsWrapper header="Player 1">
